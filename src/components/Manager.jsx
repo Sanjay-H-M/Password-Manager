@@ -78,59 +78,25 @@ const Manager = () => {
                     <span className="text-blue-500">OP/&gt;</span>
                 </h1>
                 <p className="text-blue-900 text-lg text-center">Your own Password Manager</p>
-
-                {/* Form Section */}
                 <div className="flex flex-col p-4 text-black gap-8 items-center">
-                    <input
-                        value={form.site}
-                        onChange={handleChange}
-                        placeholder="Enter website URL"
-                        className="rounded-full border border-blue-500 w-full px-4 py-2"
-                        type="text"
-                        name="site"
-                        id="site"
-                    />
+                    <input value={form.site} onChange={handleChange} placeholder="Enter website URL" className="rounded-full border border-blue-500 w-full px-4 py-2" type="text" name="site" id="site"/>
 
                     <div className="flex flex-col md:flex-row w-full gap-8">
-                        <input
-                            value={form.username}
-                            onChange={handleChange}
-                            placeholder="Enter username"
-                            className="rounded-full border border-blue-500 w-full md:w-1/2 px-4 py-2"
-                            type="text"
-                            name="username"
-                            id="username"
-                        />
+                        <input value={form.username} onChange={handleChange} placeholder="Enter username" className="rounded-full border border-blue-500 w-full md:w-1/2 px-4 py-2" type="text" name="username" id="username"/>
                         <div className="relative w-full md:w-1/2">
-                            <input
-                                ref={passwordref}
-                                value={form.password}
-                                onChange={handleChange}
-                                placeholder="Enter password"
-                                className="rounded-full border border-blue-500 w-full px-4 py-2"
-                                type="password"
-                                name="password"
-                                id="password"
-                            />
-                            <span
-                                className="absolute right-3 top-2 cursor-pointer"
-                                onClick={showPassword}
-                            >
+                            <input ref={passwordref} value={form.password} onChange={handleChange} placeholder="Enter password" className="rounded-full border border-blue-500 w-full px-4 py-2" type="password" name="password" id="password"/>
+                            <span className="absolute right-3 top-2 cursor-pointer" onClick={showPassword}>
                                 <img ref={ref} width={26} className="p-1" src="/eye.png" alt="eye" />
                             </span>
                         </div>
                     </div>
 
-                    <button
-                        onClick={savePassword}
-                        className="flex justify-center items-center bg-blue-500 rounded-full px-6 py-2 hover:bg-blue-400 gap-2 border border-blue-900"
-                    >
+                    <button onClick={savePassword} className="flex justify-center items-center bg-blue-500 rounded-full px-6 py-2 hover:bg-blue-400 gap-2 border border-blue-900">
                         <lord-icon src="https://cdn.lordicon.com/jgnvfzqg.json" trigger="hover"></lord-icon>
                         SAVE
                     </button>
                 </div>
 
-                {/* Password List Section */}
                 <div className="passwords mt-10">
                     <h2 className="font-bold text-2xl py-4">Your Passwords</h2>
                     {passwordArray.length === 0 ? (
